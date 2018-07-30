@@ -1,25 +1,20 @@
 import React from 'react';
-import { StyleSheet, Text, View, ImageBackground } from 'react-native';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+
+import { getQuestion } from './Reducers';
+
+import App from './containers/App';
+
+const store = createStore(getQuestion);
 
 export default class Index extends React.Component {
     render() {
         return (
-            <ImageBackground
-                source={require('../assets/historyApp-bg2.jpg')}
-                style={{flex: 1}}
-            >
-                <View style={styles.container}>
-                    <Text>History Game</Text>    
-                </View>
-            </ImageBackground>
+            <Provider store = { store }>
+                <App />
+            </Provider>
         );
     }
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
