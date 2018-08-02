@@ -34,12 +34,20 @@ class App extends React.Component {
         return (
             <ImageBackground
                 source={require('../../assets/historyApp-bg2.jpg')}
-                style={{flex: 1}}
+                style={{ flex: 1 }}
             >
-                <HeaderComponent score={ score } total={ totalQuestions } />
-                <QuestionComponent question={ currentQuestion } total={ totalQuestions } />
-                <AnswerComponent question={ currentQuestion } />
-                <TriviaComponent question={ currentQuestion } />
+                <View style={{ flex: 1 }}>
+                    <HeaderComponent score={ score } total={ totalQuestions } />
+                </View>
+                <View style={{ flex: 1 }}>
+                    <QuestionComponent question={ currentQuestion } total={ totalQuestions } />
+                </View>
+                <View style={{ flex: 2 }}>
+                    <AnswerComponent question={ currentQuestion } />
+                </View>
+                <View style={{ flex: 1 }}>
+                    <TriviaComponent question={ currentQuestion } />
+                </View>
             </ImageBackground>
         );
     }
