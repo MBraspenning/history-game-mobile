@@ -1,10 +1,10 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native';
 
-const TriviaComponent = () => {
+const TriviaComponent = ({ question }) => {
     return (
         <View style={ styles.container }>
-            <Text>Trivia section goes here!</Text>
+            <Text>{ question.trivia }</Text>
         </View>
     );
 }

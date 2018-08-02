@@ -18,7 +18,11 @@ const AnswerComponent = ({ question }) => {
         );    
     }
     
-    return <Text>Loading</Text>
+    return (
+        <View style={ styles.container }>
+            <Text>Loading</Text>
+        </View>
+    );
 }
 
 const styles = StyleSheet.create({
