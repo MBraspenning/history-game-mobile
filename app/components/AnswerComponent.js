@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
-const AnswerComponent = () => {
-    return (
-        <View style={ styles.container }>
-            <Text>Multiple Choice options go here!</Text>
-        </View>
-    );
+const AnswerComponent = ({ question }) => {
+    if (question.options) {
+        return (
+            <View style={ styles.container }>
+                {
+                    question.options.map((option, index) => {
+                        return (
+                            <TouchableOpacity key={index}>
+                                <Text>{ option }</Text>
+                            </TouchableOpacity>
+                        )
+                    })    
+                }
+            </View>
+        );    
+    }
+    
+    return <Text>Loading</Text>
 }
 
 const styles = StyleSheet.create({

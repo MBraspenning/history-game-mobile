@@ -37,7 +37,7 @@ class App extends React.Component {
             >
                 <HeaderComponent />
                 <QuestionComponent question={ currentQuestion } total={ totalQuestions } />
-                <AnswerComponent />
+                <AnswerComponent question={ currentQuestion } />
                 <TriviaComponent />
             </ImageBackground>
         );
