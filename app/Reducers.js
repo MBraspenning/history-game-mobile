@@ -2,6 +2,7 @@ import { Questions } from './data/Questions';
 
 const initialState = {
     index: -1,
+    score: 0,
     question: {},
     total: Questions.length
 };

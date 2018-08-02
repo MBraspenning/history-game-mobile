@@ -13,6 +13,7 @@ const mapStateToProps = state => {
     return {
         currentQuestion: state.question,
         totalQuestions: state.total,
+        score: state.score
     }
 }
 
@@ -28,14 +29,14 @@ class App extends React.Component {
     }
     
     render() {
-        const { currentQuestion, totalQuestions } = this.props;
+        const { currentQuestion, totalQuestions, score } = this.props;
         
         return (
             <ImageBackground
                 source={require('../../assets/historyApp-bg2.jpg')}
                 style={{flex: 1}}
             >
-                <HeaderComponent />
+                <HeaderComponent score={ score } total={ totalQuestions } />
                 <QuestionComponent question={ currentQuestion } total={ totalQuestions } />
                 <AnswerComponent question={ currentQuestion } />
                 <TriviaComponent question={ currentQuestion } />
