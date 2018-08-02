@@ -8,9 +8,17 @@ const AnswerComponent = ({ question }) => {
                 {
                     question.options.map((option, index) => {
                         return (
-                            <TouchableOpacity key={index}>
-                                <Text>{ option }</Text>
-                            </TouchableOpacity>
+                            <View key={ index } style={ styles.optionsWrapper }>
+                                <View style={{ flex: 1 }}>
+                                    <TouchableOpacity 
+                                        style={ styles.options }
+                                        key={ index } 
+                                        onPress={() => {console.log(index)}}                              
+                                    >
+                                        <Text>{ option }</Text>
+                                    </TouchableOpacity>
+                                </View>
+                            </View>
                         )
                     })    
                 }
@@ -29,8 +37,20 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
+        paddingVertical: 5
     },
+    optionsWrapper: {
+        flexDirection: 'row',
+        marginHorizontal: 20,
+    },
+    options: {
+        borderWidth: 1,
+        borderColor: 'black',
+        borderRadius: 5,
+        paddingVertical: 10,
+        paddingHorizontal: 5
+    }
 });
 
 export default AnswerComponent;
