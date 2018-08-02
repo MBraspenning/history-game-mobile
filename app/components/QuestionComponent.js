@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const QuestionComponent = () => {
+const QuestionComponent = ({ question, total }) => {
     return (
         <View style={ styles.container }>
-            <Text>Question ??/?? :</Text>
-            <Text>Some placeholder question?</Text>
+            <Text>Question { question.index }/{ total } :</Text>
+            <Text>{ question.question }</Text>
         </View>
     );
 }
