@@ -15,7 +15,7 @@ const AnswerComponent = ({ question }) => {
                                         key={ index } 
                                         onPress={() => {console.log(index)}}                              
                                     >
-                                        <Text style={{ color: 'white' }}>{ option }</Text>
+                                        <Text style={{ color: 'white', fontSize: 15 }}>{ option }</Text>
                                     </TouchableOpacity>
                                 </View>
                             </View>

@@ -39,10 +39,10 @@ class App extends React.Component {
                 <View style={{ flex: 1 }}>
                     <HeaderComponent score={ score } total={ totalQuestions } />
                 </View>
-                <View style={{ flex: 1 }}>
+                <View style={{ flex: 2 }}>
                     <QuestionComponent question={ currentQuestion } total={ totalQuestions } />
                 </View>
-                <View style={{ flex: 2 }}>
+                <View style={{ flex: 3 }}>
                     <AnswerComponent question={ currentQuestion } />
                 </View>
                 <View style={{ flex: 2 }}>

@@ -4,8 +4,8 @@ import { View, Text, StyleSheet } from 'react-native';
 const QuestionComponent = ({ question, total }) => {
     return (
         <View style={ styles.container }>
-            <Text style={{ color: 'white' }}>Question { question.index }/{ total } :</Text>
-            <Text style={{ color: 'white' }}>{ question.question }</Text>
+            <Text style={{ color: 'white', fontSize: 25 }}>Question { question.index }/{ total } :</Text>
+            <Text style={{ color: 'white', fontSize: 15, marginTop: 15 }}>{ question.question }</Text>
         </View>
     );
 }
@@ -13,8 +13,9 @@ const QuestionComponent = ({ question, total }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
+        alignItems: 'flex-start',
         justifyContent: 'center',
+        marginHorizontal: 20
     },
 });
 
