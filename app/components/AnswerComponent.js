@@ -13,7 +13,15 @@ const AnswerComponent = ({ question, checkAnswer }) => {
                             <View key={ index } style={ styles.optionsWrapper }>
                                 <View style={{ flex: 1 }}>
                                     <TouchableOpacity 
-                                        style={ styles.options }
+                                        style={[ 
+                                            styles.options, 
+                                            question.result && question.answer === index + 1  
+                                            ? styles.correctAnswer 
+                                            : null, 
+                                            question.result !== question.answer && question.result === index + 1
+                                            ? styles.wrongAnswer
+                                            : null
+                                        ]}
                                         key={ index } 
                                         onPress={ () => checkAnswer(index) }                              
                                     >
@@ -53,6 +61,12 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         paddingHorizontal: 10,
         backgroundColor: 'rgba(113, 10, 10, 0.6)'
+    },
+    correctAnswer: {
+        backgroundColor: 'green'
+    },
+    wrongAnswer: {
+        backgroundColor: 'red'
     }
 });
 
