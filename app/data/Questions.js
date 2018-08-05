@@ -9,6 +9,7 @@ export const Questions = [
             'Augustus'
         ],
         answer: 4,
+        result: '',
         trivia: 'The Roman empire is the longest-lasting empire in history. It spanned several eras, but essentially lasted from 27 BC to 1453 AD. A grand total of 1,480 years.'
     },
     {
@@ -21,6 +22,7 @@ export const Questions = [
             '1099'
         ],
         answer: 2,
+        result: '',
         trivia: 'The Battle of Hastings took place 11 km north of Hastings at the present-day town of Battle which got it\'s name from this historical event.'
     },
     {
@@ -33,6 +35,7 @@ export const Questions = [
             'Joseph E. Johnston'
         ],
         answer: 3,
+        result: '',
         trivia: 'Many surveys and polls conducted in the last 100 years voted Abraham Lincoln as the most popular president in American history.'
     },
     {
@@ -45,6 +48,7 @@ export const Questions = [
             'Don Diego de la Vega'
         ],
         answer: 3,
+        result: '',
         trivia: 'The Aztec capital Tenochtitlan was destroyed during the conquest of the Aztec Empire. The Spanish conquerors renamed it Mexico City which now is the capital city of Mexico.'
     },
     {
@@ -57,6 +61,7 @@ export const Questions = [
             'SBD Dauntless'
         ],
         answer: 2,
+        result: '',
         trivia: 'Japan\'s refusal to accept the Allies\' demands for unconditional surrender led to the bombing of Hiroshima and Nagasaki. Six days after the second bomb dropped, Japan finally surrendered and World War II came to an end.'
     },
     {
@@ -69,6 +74,7 @@ export const Questions = [
             'Edward Smith'
         ],
         answer: 3,
+        result: '',
         trivia: 'The HMS Victory, the flagship of the British commander at the Battle of Trafalgar, still serves as the flagship of the First Sea Lord and is the oldest naval ship still in commission.'
     },
     {
@@ -81,6 +87,7 @@ export const Questions = [
             'Dommoc'
         ],
         answer: 1,
+        result: '',
         trivia: 'The word "viking" is derived from the Old English word "wicing" which translates as pirate, a fitting term for a seafaring people known best for their violent raids.'
     },
     {
@@ -93,6 +100,7 @@ export const Questions = [
             'Vlade Divac'
         ],
         answer: 1,
+        result: '',
         trivia: 'The Scottish rock band Franz Ferdinand choose their name after seeing a racehorse named Archduke Ferdinand win the Northumberland Plate in 2001.'
     },
     {
@@ -105,6 +113,7 @@ export const Questions = [
             'Union Jack'
         ],
         answer: 3,
+        result: '',
         trivia: 'Pirates would normally fly false colors or no colors at all until they had their prey within firing range. At that point they would raise their own flag, often simultaneously with a warning shot.'
     },
     {
@@ -117,6 +126,7 @@ export const Questions = [
             'Edward Smith'
         ],
         answer: 4,
+        result: '',
         trivia: 'The RMS Titanic was one of three Olympic-class ocean liners built for the White Star Line in the early 20th century. The other two being the RMS Olympic and the RMS Britannic.'
     },
     {
@@ -129,6 +139,7 @@ export const Questions = [
             'James Irwin'
         ],
         answer: 2,
+        result: '',
         trivia: 'The second man on the moon was tasked with taking a series of panoramic photos while on the moon, so many of the famous photos we know today were taken by this man.'
     },
     {
@@ -141,6 +152,7 @@ export const Questions = [
             'Aristotle'
         ],
         answer: 3,
+        result: '',
         trivia: 'The underlying meaning of the phrase is that the very act of doubting one\'s own existence serves as proof of the reality of one\'s own mind.'
     },
     {
@@ -153,6 +165,7 @@ export const Questions = [
             'Arthur Percival'
         ],
         answer: 1,
+        result: '',
         trivia: 'Tourism at the battleground started the day after the battle. The iconic monument we can see today was ordered by King William I of the Netherlands in 1820.'
     },
     {
@@ -165,6 +178,7 @@ export const Questions = [
             'Florence'
         ],
         answer: 3,
+        result: '',
         trivia: 'Christianity became the official religion of the Roman Empire in the year 380 AD under emperor Theodosius I.'
     },
     {
@@ -177,6 +191,7 @@ export const Questions = [
             'Peter the Great'
         ],
         answer: 2,
+        result: '',
         trivia: 'Russia\'s war with Germany in WWI caused 3,300,000 Russian deaths. This in combination with incompetent management of the war effort and lack of food led to the fall of the last tsar of Russia.'
     },
     {
@@ -189,6 +204,7 @@ export const Questions = [
             'Financial Crisis'
         ],
         answer: 3,
+        result: '',
         trivia: 'The French royal family tried to escape the country but were caught at the border. Even though people had no pictures of the royal family, they were recognized because of coins which showed the king\'s face.'
     },
     {
@@ -201,6 +217,7 @@ export const Questions = [
             '1969'
         ],
         answer: 1,
+        result: '',
         trivia: 'The Berlin Wall was constructed as a way of preventing East Germans from entering West Germany. It was not so much a boundary for West Germans wanting to enter the East, who were able to do so by obtaining a permit.'
     },
     {
@@ -213,6 +230,7 @@ export const Questions = [
             'The Rise of Protestantism'
         ],
         answer: 2,
+        result: '',
         trivia: 'Pope Urban II laid the foundations for the papal monarchy, and his pontificate marked a turning point in the institutional organization of the papacy and in papal-imperial relations.'
     },
     {
@@ -225,6 +243,7 @@ export const Questions = [
             'Tiberius'
         ],
         answer: 1,
+        result: '',
         trivia: 'George R. R. Martin has acknowledged that this wall was the inspiration for The Wall in his best-selling series A Song of Ice and Fire, dramatised in the TV series Game of Thrones.'
     },
     {
@@ -237,6 +256,7 @@ export const Questions = [
             'Atlantis'
         ],
         answer: 3,
+        result: '',
         trivia:'Christa McAuliffe was selected from more than 11,000 applicants to participate in the NASA Teacher in Space Project and was scheduled to become the first teacher in space. Unfortunately she died together with the other crew members.'
     }
 ]

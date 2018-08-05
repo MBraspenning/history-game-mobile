@@ -17,7 +17,13 @@ export const questionReducer = (state = initialState, action = {}) => {
         case 'CHECK_ANSWER': 
             if ((action.payload + 1) === state.question.answer) {
                 return Object.assign({}, state, {
-                    score: (state.score + 1)    
+                    score: (state.score + 1),
+                    question: Object.assign({}, state.question, {result: 'correct'}) 
+                });
+            }
+            else {
+                return Object.assign({}, state, {
+                    question: Object.assign({}, state.question, {result: 'wrong'})
                 });
             }
         default:
