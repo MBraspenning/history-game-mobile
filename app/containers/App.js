@@ -11,9 +11,9 @@ import { getQuestion, checkAnswer } from '../Actions';
 
 const mapStateToProps = state => {
     return {
-        currentQuestion: state.getQuestion.question,
-        totalQuestions: state.getQuestion.total,
-        score: state.getQuestion.score
+        currentQuestion: state.questionReducer.question,
+        totalQuestions: state.questionReducer.total,
+        score: state.questionReducer.score
     }
 }
 
