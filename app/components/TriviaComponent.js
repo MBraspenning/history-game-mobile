@@ -1,6 +1,8 @@
 import React from 'react'
 import { View, Text, StyleSheet, Image } from 'react-native';
 
+import { commonStyles } from '../common/Styles';
+
 const TriviaComponent = ({ question }) => {
     return (
         <View style={ styles.container }>
@@ -8,7 +10,7 @@ const TriviaComponent = ({ question }) => {
                 <Image source={require('../../assets/Roman_Soldier.png')} style={ styles.image } />
             </View>
             <View style={ styles.triviaWrapper }>
-                <Text style={{ color: 'white', fontSize: 15 }}>{ question.trivia }</Text>
+                <Text style={ commonStyles.basicText }>{ question.trivia }</Text>
             </View>
         </View>
     );

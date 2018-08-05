@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
+import { commonStyles } from '../common/Styles';
+
 const AnswerComponent = ({ question }) => {
     if (question.options) {
         return (
@@ -15,7 +17,7 @@ const AnswerComponent = ({ question }) => {
                                         key={ index } 
                                         onPress={() => {console.log(index)}}                              
                                     >
-                                        <Text style={{ color: 'white', fontSize: 15 }}>{ option }</Text>
+                                        <Text style={ commonStyles.basicText }>{ option }</Text>
                                     </TouchableOpacity>
                                 </View>
                             </View>
