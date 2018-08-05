@@ -4,8 +4,8 @@ import { View, Text, StyleSheet } from 'react-native';
 const HeaderComponent = ({ score, total }) => {
     return (
         <View style={ styles.container }>
-            <Text>History Game</Text>
-            <Text>Score: { score }/{ total }</Text>
+            <Text style={{ color: 'white' }}>History Game</Text>
+            <Text style={{ color: 'white' }}>Score: { score }/{ total }</Text>
         </View>
     );
 }

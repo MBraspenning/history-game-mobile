@@ -45,7 +45,7 @@ class App extends React.Component {
                 <View style={{ flex: 2 }}>
                     <AnswerComponent question={ currentQuestion } />
                 </View>
-                <View style={{ flex: 1 }}>
+                <View style={{ flex: 2 }}>
                     <TriviaComponent question={ currentQuestion } />
                 </View>
             </ImageBackground>

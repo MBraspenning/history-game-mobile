@@ -1,10 +1,15 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 
 const TriviaComponent = ({ question }) => {
     return (
         <View style={ styles.container }>
-            <Text>{ question.trivia }</Text>
+            <View style={ styles.imageWrapper }>
+                <Image source={require('../../assets/Roman_Soldier.png')} style={ styles.image } />
+            </View>
+            <View style={ styles.triviaWrapper }>
+                <Text style={{ color: 'white' }}>{ question.trivia }</Text>
+            </View>
         </View>
     );
 }
@@ -12,9 +17,17 @@ const TriviaComponent = ({ question }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
+        marginHorizontal: 20
     },
+    imageWrapper: {
+        flex: 1,
+    },
+    triviaWrapper: {
+        flex: 2,
+    }
 });
 
 export default TriviaComponent;

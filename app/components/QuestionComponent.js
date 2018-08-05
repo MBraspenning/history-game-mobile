@@ -4,8 +4,8 @@ import { View, Text, StyleSheet } from 'react-native';
 const QuestionComponent = ({ question, total }) => {
     return (
         <View style={ styles.container }>
-            <Text>Question { question.index }/{ total } :</Text>
-            <Text>{ question.question }</Text>
+            <Text style={{ color: 'white' }}>Question { question.index }/{ total } :</Text>
+            <Text style={{ color: 'white' }}>{ question.question }</Text>
         </View>
     );
 }
