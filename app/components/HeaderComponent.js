@@ -1,13 +1,40 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { Font } from 'expo';
 
-const HeaderComponent = ({ score, total }) => {
-    return (
-        <View style={ styles.container }>
-            <Text style={{ color: 'white' }}>History Game</Text>
-            <Text style={{ color: 'white' }}>Score: { score }/{ total }</Text>
-        </View>
-    );
+class HeaderComponent extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            fontLoaded: false
+        }
+    }
+    
+    async componentDidMount() {        
+        await Font.loadAsync({
+            'Archeologicaps': require('../../assets/fonts/Archeologicaps.ttf')    
+        });
+        
+        this.setState({ fontLoaded: true });
+    }
+    
+    render() {
+        const { score, total } = this.props;
+        
+        return (
+            <View style={ styles.container }>
+                {
+                    this.state.fontLoaded 
+                    ? (
+                        <Text style={ styles.headerText }>History Game</Text>
+                    )
+                    : null
+                } 
+                <Text style={{ color: 'white' }}>Score: { score }/{ total }</Text>               
+            </View>
+        );    
+    }
+    
 }
 
 const styles = StyleSheet.create({
@@ -15,7 +42,13 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+        marginTop: 50
     },
+    headerText: { 
+        color: 'white',
+        fontFamily: 'Archeologicaps',
+        fontSize: 28
+    }
 });
 
 
