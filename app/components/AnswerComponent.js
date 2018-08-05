@@ -32,6 +32,17 @@ const AnswerComponent = ({ question, checkAnswer }) => {
                         )
                     })    
                 }
+                <View style={ styles.buttonWrapper }>
+                {
+                    question.result
+                    ? (
+                        <TouchableOpacity style={ styles.button }>
+                            <Text style={ commonStyles.basicText }>Next Question</Text>
+                        </TouchableOpacity>
+                    )
+                    : null
+                }
+                </View>                
             </View>
         );    
     }
@@ -47,27 +58,40 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'space-between',
-        paddingVertical: 5
+        paddingVertical: 5,
     },
     optionsWrapper: {
+        flex: 1,
         flexDirection: 'row',
-        marginHorizontal: 20,
+        marginHorizontal: 10,
     },
     options: {
         borderWidth: 1,
-        borderColor: 'black',
-        borderRadius: 5,
-        paddingVertical: 10,
-        paddingHorizontal: 10,
+        borderColor: '#710A0A',
+        borderRadius: 5,        
+        padding: 10,
         backgroundColor: 'rgba(113, 10, 10, 0.6)'
+    },
+    buttonWrapper: {
+        flex: 1,
+        flexDirection: 'row',
+        alignSelf: 'flex-end',
+        marginHorizontal: 10, 
+    },
+    button: {
+        backgroundColor: '#BB6D6D',
+        borderWidth: 1,
+        borderColor: '#710A0A',
+        borderRadius: 5,
+        padding: 10, 
+        marginBottom: 7,
     },
     correctAnswer: {
         backgroundColor: 'green'
     },
     wrongAnswer: {
         backgroundColor: 'red'
-    }
+    },
 });
 
 export default AnswerComponent;
