@@ -30,7 +30,7 @@ class HeaderComponent extends Component {
                     )
                     : null
                 } 
-                <Text style={{ color: 'white' }}>Score: { score }/{ total }</Text>               
+                <Text style={ styles.scoreText }>Score: { score }/{ total }</Text>               
             </View>
         );    
     }
@@ -48,6 +48,11 @@ const styles = StyleSheet.create({
         color: 'white',
         fontFamily: 'Archeologicaps',
         fontSize: 28
+    },
+    scoreText: { 
+        color: 'white',
+        fontSize: 25,
+        marginTop: 10 
     }
 });
 
