@@ -1,12 +1,13 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 
-import { getQuestion } from './Reducers';
+import { getQuestion, checkAnswer } from './Reducers';
 
 import App from './containers/App';
 
-const store = createStore(getQuestion);
+const rootReducer = combineReducers({ getQuestion, checkAnswer });
+const store = createStore(rootReducer);
 
 export default class Index extends React.Component {
     render() {

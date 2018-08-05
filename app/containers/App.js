@@ -7,19 +7,20 @@ import QuestionComponent from '../components/QuestionComponent';
 import AnswerComponent from '../components/AnswerComponent';
 import TriviaComponent from '../components/TriviaComponent';
 
-import { getQuestion } from '../Actions';
+import { getQuestion, checkAnswer } from '../Actions';
 
 const mapStateToProps = state => {
     return {
-        currentQuestion: state.question,
-        totalQuestions: state.total,
-        score: state.score
+        currentQuestion: state.getQuestion.question,
+        totalQuestions: state.getQuestion.total,
+        score: state.getQuestion.score
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return { 
-        onGetQuestion: () => dispatch(getQuestion())
+        onGetQuestion: () => dispatch(getQuestion()),
+        onCheckAnswer: (answer) => dispatch(checkAnswer(answer))
     }
 }
 
@@ -29,7 +30,7 @@ class App extends React.Component {
     }
     
     render() {
-        const { currentQuestion, totalQuestions, score } = this.props;
+        const { currentQuestion, totalQuestions, score, onCheckAnswer } = this.props;
         
         return (
             <ImageBackground
@@ -43,7 +44,7 @@ class App extends React.Component {
                     <QuestionComponent question={ currentQuestion } total={ totalQuestions } />
                 </View>
                 <View style={{ flex: 3 }}>
-                    <AnswerComponent question={ currentQuestion } />
+                    <AnswerComponent question={ currentQuestion } checkAnswer={ onCheckAnswer } />
                 </View>
                 <View style={{ flex: 2 }}>
                     <TriviaComponent question={ currentQuestion } />

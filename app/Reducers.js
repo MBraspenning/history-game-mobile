@@ -18,3 +18,12 @@ export const getQuestion = (state = initialState, action = {}) => {
             return state;
     }
 }
+
+export const checkAnswer = (state= initialState, action = {}) => {
+    switch (action.type) {
+        case 'CHECK_ANSWER':
+            console.log('checking answer: ', action.payload);
+        default:
+            return state;
+    }
+}

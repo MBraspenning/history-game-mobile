@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
 import { commonStyles } from '../common/Styles';
 
-const AnswerComponent = ({ question }) => {
+const AnswerComponent = ({ question, checkAnswer }) => {
     if (question.options) {
         return (
             <View style={ styles.container }>
@@ -15,7 +15,7 @@ const AnswerComponent = ({ question }) => {
                                     <TouchableOpacity 
                                         style={ styles.options }
                                         key={ index } 
-                                        onPress={() => {console.log(index)}}                              
+                                        onPress={ () => checkAnswer(index) }                              
                                     >
                                         <Text style={ commonStyles.basicText }>{ option }</Text>
                                     </TouchableOpacity>
