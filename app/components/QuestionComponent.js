@@ -6,7 +6,7 @@ import { commonStyles } from '../common/Styles';
 const QuestionComponent = ({ question, total }) => {
     return (
         <View style={ styles.container }>
-            <Text style={{ color: 'white', fontSize: 25 }}>Question { question.index }/{ total } :</Text>
+            <Text style={{ color: 'white', fontSize: 20 }}>Question { question.index }/{ total } :</Text>
             <Text style={[ commonStyles.basicText, { marginTop: 15 } ]}>{ question.question }</Text>
         </View>
     );
