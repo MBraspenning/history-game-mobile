@@ -8,7 +8,7 @@ import AnswerComponent from '../components/AnswerComponent';
 import TriviaComponent from '../components/TriviaComponent';
 import InfoComponent from '../components/InfoComponent';
 
-import { getQuestion, checkAnswer, reset } from '../Actions';
+import { getQuestion, checkAnswer, finish, reset } from '../Actions';
 
 const mapStateToProps = state => {
     return {
@@ -22,7 +22,8 @@ const mapDispatchToProps = (dispatch) => {
     return { 
         onGetQuestion: () => dispatch(getQuestion()),
         onCheckAnswer: (answer) => dispatch(checkAnswer(answer)),
-        onReset: () => dispatch(reset())
+        onReset: () => dispatch(reset()),
+        onFinish: () => dispatch(finish())
     }
 }
 
@@ -32,7 +33,7 @@ class App extends React.Component {
     }
     
     render() {
-        const { currentQuestion, totalQuestions, score, onCheckAnswer, onGetQuestion, onReset } = this.props;
+        const { currentQuestion, totalQuestions, score, onCheckAnswer, onGetQuestion, onFinish, onReset } = this.props;
         
         return (
             <ImageBackground
@@ -54,6 +55,7 @@ class App extends React.Component {
                         total={ totalQuestions } 
                         checkAnswer={ onCheckAnswer }
                         getQuestion={ onGetQuestion }
+                        finish={ onFinish }
                         reset={ onReset }
                     />
                 </View>
