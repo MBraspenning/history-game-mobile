@@ -6,3 +6,7 @@ export const checkAnswer = (answer) => ({
     type: 'CHECK_ANSWER',
     payload: answer
 });
+
+export const reset = () => ({
+    type: 'RESET'
+})

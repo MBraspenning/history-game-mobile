@@ -26,6 +26,13 @@ export const questionReducer = (state = initialState, action = {}) => {
                     question: Object.assign({}, state.question, { result: (action.payload + 1) })
                 });
             }
+        case 'RESET':
+            return Object.assign({}, state, {
+                index: 0,
+                score: 0,
+                question: Questions[0],
+                total: Questions.length
+            });
         default:
             return state;
     }

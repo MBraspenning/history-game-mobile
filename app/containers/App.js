@@ -8,7 +8,7 @@ import AnswerComponent from '../components/AnswerComponent';
 import TriviaComponent from '../components/TriviaComponent';
 import InfoComponent from '../components/InfoComponent';
 
-import { getQuestion, checkAnswer } from '../Actions';
+import { getQuestion, checkAnswer, reset } from '../Actions';
 
 const mapStateToProps = state => {
     return {
@@ -21,7 +21,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch) => {
     return { 
         onGetQuestion: () => dispatch(getQuestion()),
-        onCheckAnswer: (answer) => dispatch(checkAnswer(answer))
+        onCheckAnswer: (answer) => dispatch(checkAnswer(answer)),
+        onReset: () => dispatch(reset())
     }
 }
 
@@ -31,7 +32,7 @@ class App extends React.Component {
     }
     
     render() {
-        const { currentQuestion, totalQuestions, score, onCheckAnswer, onGetQuestion } = this.props;
+        const { currentQuestion, totalQuestions, score, onCheckAnswer, onGetQuestion, onReset } = this.props;
         
         return (
             <ImageBackground
@@ -45,10 +46,16 @@ class App extends React.Component {
                     <InfoComponent question={ currentQuestion } total={ totalQuestions } score={ score }></InfoComponent>
                 </View>
                 <View style={{ flex: 3 }}>
-                    <QuestionComponent question={ currentQuestion } />
+                    <QuestionComponent question={ currentQuestion }/>
                 </View>
                 <View style={{ flex: 5 }}>
-                    <AnswerComponent question={ currentQuestion } checkAnswer={ onCheckAnswer } getQuestion={ onGetQuestion }/>
+                    <AnswerComponent 
+                        question={ currentQuestion }
+                        total={ totalQuestions } 
+                        checkAnswer={ onCheckAnswer }
+                        getQuestion={ onGetQuestion }
+                        reset={ onReset }
+                    />
                 </View>
                 <View style={{ flex: 3 }}>
                     <TriviaComponent question={ currentQuestion } />
