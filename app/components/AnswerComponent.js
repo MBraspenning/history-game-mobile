@@ -90,10 +90,10 @@ const styles = StyleSheet.create({
         marginBottom: 7,
     },
     correctAnswer: {
-        backgroundColor: 'green'
+        backgroundColor: 'rgb(0, 162, 139)'
     },
     wrongAnswer: {
-        backgroundColor: 'red'
+        backgroundColor: 'rgb(220, 20, 60)'
     },
 });
 
