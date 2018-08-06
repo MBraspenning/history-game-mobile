@@ -3,14 +3,24 @@ import { View, Text, StyleSheet, Image } from 'react-native';
 
 import { commonStyles } from '../common/Styles';
 
-const TriviaComponent = ({ question }) => {
+import { Finished } from '../data/Finished'
+
+const TriviaComponent = ({ question, isFinished }) => {
     return (
         <View style={ styles.container }>
             <View style={ styles.imageWrapper }>
                 <Image source={require('../../assets/Roman_Soldier.png')} style={ styles.image } />
             </View>
             <View style={ styles.triviaWrapper }>
-                <Text style={{ color: 'white', fontSize: 10 }}>{ question.trivia }</Text>
+                {
+                    isFinished 
+                    ? (
+                        <Text style={{ color: 'white', fontSize: 10 }}>{ Finished.trivia }</Text>
+                    )
+                    : (
+                        <Text style={{ color: 'white', fontSize: 10 }}>{ question.trivia }</Text>
+                    ) 
+                }
             </View>
         </View>
     );

@@ -3,11 +3,21 @@ import { View, Text, StyleSheet } from 'react-native';
 
 import { commonStyles } from '../common/Styles';
 
-const QuestionComponent = ({ question, total }) => {
+import { Finished } from '../data/Finished';
+
+const QuestionComponent = ({ question, total, isFinished, scoreRange }) => {
     return (
-        <View style={ styles.container }>
-            <Text style={[ commonStyles.basicText, { marginTop: 10 } ]}>{ question.question }</Text>
-        </View>
+        isFinished
+        ? (
+            <View style={ styles.container }>
+                <Text style={[ commonStyles.basicText, { marginTop: 10 } ]}>{ Finished.content[scoreRange] }</Text>
+            </View>
+        )
+        : (
+            <View style={ styles.container }>
+                <Text style={[ commonStyles.basicText, { marginTop: 10 } ]}>{ question.question }</Text>
+            </View>
+        )
     );
 }
 

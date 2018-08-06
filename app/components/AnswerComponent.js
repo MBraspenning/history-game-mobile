@@ -3,38 +3,51 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 
 import { commonStyles } from '../common/Styles';
 
-const AnswerComponent = ({ question, total, checkAnswer, getQuestion, finish, reset }) => {
+import { Finished } from '../data/Finished';
+
+const AnswerComponent = ({ question, total, isFinished, checkAnswer, getQuestion, finish, reset }) => {
     if (question.options) {
         return (
             <View style={ styles.container }>
                 {
-                    question.options.map((option, index) => {
-                        return (
-                            <View key={ index } style={ styles.optionsWrapper }>
-                                <View style={{ flex: 1 }}>
-                                    <TouchableOpacity 
-                                        style={[ 
-                                            styles.options, 
-                                            question.result && question.answer === index + 1  
-                                            ? styles.correctAnswer 
-                                            : null, 
-                                            question.result !== question.answer && question.result === index + 1
-                                            ? styles.wrongAnswer
-                                            : null
-                                        ]}
-                                        key={ index } 
-                                        onPress={ () => checkAnswer(index) }                              
-                                    >
-                                        <Text style={ commonStyles.basicText }>{ option }</Text>
-                                    </TouchableOpacity>
+                    isFinished 
+                    ? (
+                        <TouchableOpacity
+                            style={ styles.button }
+                            onPress={ () => reset() }  
+                        >
+                            <Text style={ commonStyles.basicText }>Play again!</Text>
+                        </TouchableOpacity>
+                    )
+                    : (
+                        question.options.map((option, index) => {
+                            return (
+                                <View key={ index } style={ styles.optionsWrapper }>
+                                    <View style={{ flex: 1 }}>
+                                        <TouchableOpacity 
+                                            style={[ 
+                                                styles.options, 
+                                                question.result && question.answer === index + 1  
+                                                ? styles.correctAnswer 
+                                                : null, 
+                                                question.result !== question.answer && question.result === index + 1
+                                                ? styles.wrongAnswer
+                                                : null
+                                            ]}
+                                            key={ index } 
+                                            onPress={ () => checkAnswer(index) }                              
+                                        >
+                                            <Text style={ commonStyles.basicText }>{ option }</Text>
+                                        </TouchableOpacity>
+                                    </View>
                                 </View>
-                            </View>
-                        )
-                    })    
+                            )
+                        }) 
+                    )
                 }
                 <View style={ styles.buttonWrapper }>
                 {
-                    question.result
+                    question.result && !isFinished
                     ? (
                         <TouchableOpacity 
                             style={ styles.button }

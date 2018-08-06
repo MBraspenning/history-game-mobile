@@ -5,7 +5,8 @@ const initialState = {
     score: 0,
     question: {},
     total: Questions.length,
-    finished: false
+    finished: false,
+    scoreRange: 0
 };
 
 export const questionReducer = (state = initialState, action = {}) => {
@@ -29,14 +30,21 @@ export const questionReducer = (state = initialState, action = {}) => {
             }
         case 'FINISH':
             return Object.assign({}, state, {
-                finished: true    
+                finished: true,
+                scoreRange: state.score >= 15 
+                    ? 2
+                    : state.score >= 10 && state.score < 15 
+                        ? 1
+                        : 0
             });
         case 'RESET':
             return Object.assign({}, state, {
                 index: 0,
                 score: 0,
                 question: Questions[0],
-                total: Questions.length
+                total: Questions.length,
+                finished: false,
+                scoreRange: 0
             });
         default:
             return state;

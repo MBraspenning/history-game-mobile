@@ -14,7 +14,9 @@ const mapStateToProps = state => {
     return {
         currentQuestion: state.questionReducer.question,
         totalQuestions: state.questionReducer.total,
-        score: state.questionReducer.score
+        score: state.questionReducer.score,
+        finished: state.questionReducer.finished,
+        scoreRange: state.questionReducer.scoreRange
     }
 }
 
@@ -33,7 +35,17 @@ class App extends React.Component {
     }
     
     render() {
-        const { currentQuestion, totalQuestions, score, onCheckAnswer, onGetQuestion, onFinish, onReset } = this.props;
+        const { 
+            currentQuestion, 
+            totalQuestions, 
+            score, 
+            finished, 
+            scoreRange,
+            onCheckAnswer, 
+            onGetQuestion, 
+            onFinish, 
+            onReset 
+        } = this.props;
         
         return (
             <ImageBackground
@@ -44,15 +56,26 @@ class App extends React.Component {
                     <HeaderComponent/>
                 </View>
                 <View style={{ flex: 1 }}>
-                    <InfoComponent question={ currentQuestion } total={ totalQuestions } score={ score }></InfoComponent>
+                    <InfoComponent 
+                        question={ currentQuestion } 
+                        total={ totalQuestions } 
+                        score={ score } 
+                        isFinished={ finished }
+                        scoreRange={ scoreRange }
+                    />
                 </View>
                 <View style={{ flex: 3 }}>
-                    <QuestionComponent question={ currentQuestion }/>
+                    <QuestionComponent 
+                        question={ currentQuestion }
+                        isFinished={ finished }
+                        scoreRange={ scoreRange }
+                    />
                 </View>
                 <View style={{ flex: 5 }}>
                     <AnswerComponent 
                         question={ currentQuestion }
                         total={ totalQuestions } 
+                        isFinished={ finished }
                         checkAnswer={ onCheckAnswer }
                         getQuestion={ onGetQuestion }
                         finish={ onFinish }
@@ -60,7 +83,10 @@ class App extends React.Component {
                     />
                 </View>
                 <View style={{ flex: 3 }}>
-                    <TriviaComponent question={ currentQuestion } />
+                    <TriviaComponent 
+                        question={ currentQuestion } 
+                        isFinished={ finished }
+                    />
                 </View>
             </ImageBackground>
         );
