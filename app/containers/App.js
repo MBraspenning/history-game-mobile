@@ -30,7 +30,7 @@ class App extends React.Component {
     }
     
     render() {
-        const { currentQuestion, totalQuestions, score, onCheckAnswer } = this.props;
+        const { currentQuestion, totalQuestions, score, onCheckAnswer, onGetQuestion } = this.props;
         
         return (
             <ImageBackground
@@ -44,7 +44,7 @@ class App extends React.Component {
                     <QuestionComponent question={ currentQuestion } total={ totalQuestions } />
                 </View>
                 <View style={{ flex: 3 }}>
-                    <AnswerComponent question={ currentQuestion } checkAnswer={ onCheckAnswer } />
+                    <AnswerComponent question={ currentQuestion } checkAnswer={ onCheckAnswer } getQuestion={ onGetQuestion }/>
                 </View>
                 <View style={{ flex: 2 }}>
                     <TriviaComponent question={ currentQuestion } />
