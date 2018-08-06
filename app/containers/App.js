@@ -6,6 +6,7 @@ import HeaderComponent from '../components/HeaderComponent';
 import QuestionComponent from '../components/QuestionComponent';
 import AnswerComponent from '../components/AnswerComponent';
 import TriviaComponent from '../components/TriviaComponent';
+import InfoComponent from '../components/InfoComponent';
 
 import { getQuestion, checkAnswer } from '../Actions';
 
@@ -37,16 +38,19 @@ class App extends React.Component {
                 source={require('../../assets/historyApp-bg2.jpg')}
                 style={{ flex: 1 }}
             >
-                <View style={{ flex: 1 }}>
-                    <HeaderComponent score={ score } total={ totalQuestions } />
-                </View>
                 <View style={{ flex: 2 }}>
-                    <QuestionComponent question={ currentQuestion } total={ totalQuestions } />
+                    <HeaderComponent/>
+                </View>
+                <View style={{ flex: 1 }}>
+                    <InfoComponent question={ currentQuestion } total={ totalQuestions } score={ score }></InfoComponent>
                 </View>
                 <View style={{ flex: 3 }}>
+                    <QuestionComponent question={ currentQuestion } />
+                </View>
+                <View style={{ flex: 5 }}>
                     <AnswerComponent question={ currentQuestion } checkAnswer={ onCheckAnswer } getQuestion={ onGetQuestion }/>
                 </View>
-                <View style={{ flex: 2 }}>
+                <View style={{ flex: 3 }}>
                     <TriviaComponent question={ currentQuestion } />
                 </View>
             </ImageBackground>

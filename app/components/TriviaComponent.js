@@ -10,7 +10,7 @@ const TriviaComponent = ({ question }) => {
                 <Image source={require('../../assets/Roman_Soldier.png')} style={ styles.image } />
             </View>
             <View style={ styles.triviaWrapper }>
-                <Text style={ commonStyles.basicText }>{ question.trivia }</Text>
+                <Text style={{ color: 'white', fontSize: 10 }}>{ question.trivia }</Text>
             </View>
         </View>
     );
